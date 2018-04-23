@@ -8,7 +8,6 @@ namespace Gourmet_s_Choice
 {
     static class Program
     {
-        //jkkkhkuhkuh
         [STAThread]
         static void Main()
         {
