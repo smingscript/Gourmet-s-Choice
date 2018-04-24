@@ -28,49 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.ptbLeft = new System.Windows.Forms.PictureBox();
+            this.ptbRight = new System.Windows.Forms.PictureBox();
+            this.txtbxRight = new System.Windows.Forms.TextBox();
+            this.txtbxLeft = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRight)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // ptbLeft
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(364, 435);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.ptbLeft.Location = new System.Drawing.Point(12, 42);
+            this.ptbLeft.Name = "ptbLeft";
+            this.ptbLeft.Size = new System.Drawing.Size(364, 435);
+            this.ptbLeft.TabIndex = 0;
+            this.ptbLeft.TabStop = false;
+            this.ptbLeft.Click += new System.EventHandler(this.ptbLeft_Click);
             // 
-            // pictureBox2
+            // ptbRight
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(382, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(379, 435);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.ptbRight.Location = new System.Drawing.Point(382, 42);
+            this.ptbRight.Name = "ptbRight";
+            this.ptbRight.Size = new System.Drawing.Size(379, 435);
+            this.ptbRight.TabIndex = 1;
+            this.ptbRight.TabStop = false;
+            this.ptbRight.Click += new System.EventHandler(this.ptbRight_Click);
+            // 
+            // txtbxRight
+            // 
+            this.txtbxRight.Location = new System.Drawing.Point(537, 241);
+            this.txtbxRight.Name = "txtbxRight";
+            this.txtbxRight.Size = new System.Drawing.Size(100, 21);
+            this.txtbxRight.TabIndex = 3;
+            // 
+            // txtbxLeft
+            // 
+            this.txtbxLeft.Location = new System.Drawing.Point(124, 241);
+            this.txtbxLeft.Name = "txtbxLeft";
+            this.txtbxLeft.Size = new System.Drawing.Size(100, 21);
+            this.txtbxLeft.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(139, 268);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(549, 268);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 489);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtbxRight);
+            this.Controls.Add(this.txtbxLeft);
+            this.Controls.Add(this.ptbRight);
+            this.Controls.Add(this.ptbLeft);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbRight)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox ptbLeft;
+        private System.Windows.Forms.PictureBox ptbRight;
+        private System.Windows.Forms.TextBox txtbxRight;
+        private System.Windows.Forms.TextBox txtbxLeft;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

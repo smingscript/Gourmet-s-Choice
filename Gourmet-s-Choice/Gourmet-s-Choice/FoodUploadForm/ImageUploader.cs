@@ -54,8 +54,8 @@ namespace Gourmet_s_Choice.FoodUploadForm
                 Image image = Image.FromFile(file);
 
                 //DB접근
-                DataRepository.Card.InsertWithImage(cbbCategory.Text,
-                    imageBytes); //Card table과 CardImage table에 동시에 넣어야 한다
+                //DataRepository.Card.InsertWithImage(cbbCategory.Text,
+                //    imageBytes); //Card table과 CardImage table에 동시에 넣어야 한다
 
 
                 //progress bar update UI접근
