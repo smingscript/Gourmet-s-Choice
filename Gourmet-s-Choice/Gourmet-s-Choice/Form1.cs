@@ -46,14 +46,11 @@ namespace Gourmet_s_Choice
             //ptbLeft.Image = DataRepository.FoodImage.GetById(UpdateNewRoundImage()[0]);
             //ptbRight.Image = DataRepository.FoodImage.GetById(UpdateNewRoundImage()[1]);
 
-            foreach (IEnumerable<int> foodPlayer in foodPlayers.GetEnumerator())
+            foreach (var foodPlayer in foodPlayers)
             {
-                
+                txtbxLeft.Text = DataRepository.Food.GetById(foodPlayer[0]);
+                txtbxRight.Text = DataRepository.Food.GetById(foodPlayer[1]);
             }
-            txtbxLeft.Text = DataRepository.Food.GetById(foodPlayers);
-            txtbxRight.Text = DataRepository.Food.GetById(foodPlayers[1]);
-
-            
         }
 
         class YieldFoodPlayerIndex
