@@ -92,6 +92,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\ImageConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -144,6 +153,15 @@
       <DependentUpon>FoodDB.edmx</DependentUpon>
       <LastGenOutput>FoodDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\fork.png" />
+    <None Include="Resources\startGame.png" />
+    <None Include="Resources\press-button.png" />
+    <None Include="Resources\EatWhat.jpg" />
+    <None Include="Resources\Round-16.png" />
+    <None Include="Resources\Round_8.png" />
+    <None Include="Resources\Round_2.png" />
+    <None Include="Resources\Round_4.png" />
+    <None Include="Resources\YourFood.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

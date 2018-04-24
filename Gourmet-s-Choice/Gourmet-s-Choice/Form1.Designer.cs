@@ -34,47 +34,54 @@
             this.txtbxLeft = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pctbRound = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbRound)).BeginInit();
             this.SuspendLayout();
             // 
             // ptbLeft
             // 
-            this.ptbLeft.Location = new System.Drawing.Point(12, 42);
+            this.ptbLeft.Location = new System.Drawing.Point(31, 225);
+            this.ptbLeft.Margin = new System.Windows.Forms.Padding(8);
             this.ptbLeft.Name = "ptbLeft";
-            this.ptbLeft.Size = new System.Drawing.Size(364, 435);
+            this.ptbLeft.Size = new System.Drawing.Size(936, 968);
             this.ptbLeft.TabIndex = 0;
             this.ptbLeft.TabStop = false;
             this.ptbLeft.Click += new System.EventHandler(this.ptbLeft_Click);
             // 
             // ptbRight
             // 
-            this.ptbRight.Location = new System.Drawing.Point(382, 42);
+            this.ptbRight.Location = new System.Drawing.Point(982, 225);
+            this.ptbRight.Margin = new System.Windows.Forms.Padding(8);
             this.ptbRight.Name = "ptbRight";
-            this.ptbRight.Size = new System.Drawing.Size(379, 435);
+            this.ptbRight.Size = new System.Drawing.Size(975, 968);
             this.ptbRight.TabIndex = 1;
             this.ptbRight.TabStop = false;
             this.ptbRight.Click += new System.EventHandler(this.ptbRight_Click);
             // 
             // txtbxRight
             // 
-            this.txtbxRight.Location = new System.Drawing.Point(537, 241);
+            this.txtbxRight.Location = new System.Drawing.Point(1381, 602);
+            this.txtbxRight.Margin = new System.Windows.Forms.Padding(8);
             this.txtbxRight.Name = "txtbxRight";
-            this.txtbxRight.Size = new System.Drawing.Size(100, 21);
+            this.txtbxRight.Size = new System.Drawing.Size(251, 42);
             this.txtbxRight.TabIndex = 3;
             // 
             // txtbxLeft
             // 
-            this.txtbxLeft.Location = new System.Drawing.Point(124, 241);
+            this.txtbxLeft.Location = new System.Drawing.Point(319, 602);
+            this.txtbxLeft.Margin = new System.Windows.Forms.Padding(8);
             this.txtbxLeft.Name = "txtbxLeft";
-            this.txtbxLeft.Size = new System.Drawing.Size(100, 21);
+            this.txtbxLeft.Size = new System.Drawing.Size(251, 42);
             this.txtbxLeft.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(139, 268);
+            this.button1.Location = new System.Drawing.Point(357, 670);
+            this.button1.Margin = new System.Windows.Forms.Padding(8);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(193, 58);
             this.button1.TabIndex = 4;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -82,30 +89,43 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(549, 268);
+            this.button2.Location = new System.Drawing.Point(1412, 670);
+            this.button2.Margin = new System.Windows.Forms.Padding(8);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(193, 58);
             this.button2.TabIndex = 5;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pctbRound
+            // 
+            this.pctbRound.Location = new System.Drawing.Point(856, 12);
+            this.pctbRound.Name = "pctbRound";
+            this.pctbRound.Size = new System.Drawing.Size(214, 202);
+            this.pctbRound.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctbRound.TabIndex = 6;
+            this.pctbRound.TabStop = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 489);
+            this.ClientSize = new System.Drawing.Size(1988, 1222);
+            this.Controls.Add(this.pctbRound);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtbxRight);
             this.Controls.Add(this.txtbxLeft);
             this.Controls.Add(this.ptbRight);
             this.Controls.Add(this.ptbLeft);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbRound)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +139,7 @@
         private System.Windows.Forms.TextBox txtbxLeft;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pctbRound;
     }
 }
 
