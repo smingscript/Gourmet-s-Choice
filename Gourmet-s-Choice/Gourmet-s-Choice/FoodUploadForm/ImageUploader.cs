@@ -68,6 +68,7 @@ namespace Gourmet_s_Choice.FoodUploadForm
         private void bgwWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             //Image
+
         }
 
         private void bgwWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

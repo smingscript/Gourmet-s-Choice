@@ -34,13 +34,16 @@
             this.bgwWorker = new System.ComponentModel.BackgroundWorker();
             this.btnOpen = new System.Windows.Forms.Button();
             this.fbdFolder = new System.Windows.Forms.FolderBrowserDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // progressBar
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(12, 84);
+            this.progressBar.Location = new System.Drawing.Point(12, 110);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(400, 23);
             this.progressBar.TabIndex = 0;
@@ -48,7 +51,7 @@
             // btnUpload
             // 
             this.btnUpload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpload.Location = new System.Drawing.Point(337, 49);
+            this.btnUpload.Location = new System.Drawing.Point(337, 71);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(75, 23);
             this.btnUpload.TabIndex = 1;
@@ -60,10 +63,10 @@
             // 
             this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPath.Location = new System.Drawing.Point(12, 12);
+            this.txtPath.Location = new System.Drawing.Point(85, 12);
             this.txtPath.Name = "txtPath";
             this.txtPath.ReadOnly = true;
-            this.txtPath.Size = new System.Drawing.Size(400, 21);
+            this.txtPath.Size = new System.Drawing.Size(327, 21);
             this.txtPath.TabIndex = 2;
             // 
             // bgwWorker
@@ -75,7 +78,7 @@
             // btnOpen
             // 
             this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpen.Location = new System.Drawing.Point(256, 49);
+            this.btnOpen.Location = new System.Drawing.Point(256, 71);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 3;
@@ -83,11 +86,39 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(85, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(327, 21);
+            this.textBox1.TabIndex = 4;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(12, 42);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(67, 12);
+            this.lblName.TabIndex = 5;
+            this.lblName.Text = "FoodName";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "ImagePath";
+            // 
             // ImageUploader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 121);
+            this.ClientSize = new System.Drawing.Size(424, 147);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnUpload);
@@ -108,5 +139,8 @@
         private System.ComponentModel.BackgroundWorker bgwWorker;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.FolderBrowserDialog fbdFolder;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label1;
     }
 }
