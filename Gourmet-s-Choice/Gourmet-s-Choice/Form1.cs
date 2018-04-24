@@ -10,9 +10,16 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gourmet_s_Choice.Helper;
 
 namespace Gourmet_s_Choice
 {
+    public enum RoundWinner
+    {
+        Left,
+        Right
+    }
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -51,14 +58,14 @@ namespace Gourmet_s_Choice
             //랜덤으로 음식을 가져올 리스트를 생성해둔다
             foodCandidateList = new List<int>();
 
-            //if (battleRound == 0)
-            //    foodCandidateList = randomIndex.GenerateRandIndex();
+            if (battleRound == 0)
+                foodCandidateList = randomIndex.GenerateRandIndex(gameRound);
         }
 
         
         private List<int> RandomNumber = new List<int>();
 
-        private int idPointer = -1;
+        private int idPointer = 0;
         private int battleRound = 0;
 
         //클릭할 때마다 승자를 저장한다
@@ -111,9 +118,9 @@ namespace Gourmet_s_Choice
         //각 토너먼트가 끌날 때 마다 호출되어서 반환될 리스트를 만든다
         public List<List<int>> NextFoodCandidates()
         {
-            List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 , 20 };
+//            List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 , 20 };
             
-            foodCandidateList = randomIndex.ShuffleIndex(list);
+//            foodCandidateList = randomIndex.ShuffleIndex(list);
 
 
             List<List<int>> listOfList = new List<List<int>>();

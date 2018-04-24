@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Battle.cs" />
     <Compile Include="DataRepository.cs" />
     <Compile Include="Data\EntityData.cs" />
     <Compile Include="Data\FoodData.cs" />
@@ -101,7 +102,7 @@
     <Compile Include="Helper\ImageConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomIndex.cs" />
+    <Compile Include="Helper\RandomIndex.cs" />
     <EmbeddedResource Include="FoodUploadForm\ImageUploader.resx">
       <DependentUpon>ImageUploader.cs</DependentUpon>
     </EmbeddedResource>
