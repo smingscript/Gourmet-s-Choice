@@ -11,7 +11,9 @@ namespace Gourmet_s_Choice.Helper
         public List<int> GenerateRandIndex(int candidateNumber)
         {
             //DB의 음식 개수를 구한다
-            int foodCount = DataRepository.Food.GetFoodCount();
+            //            int foodCount = DataRepository.Food.GetFoodCount();
+
+            int foodCount = DataRepository.Food.GetCount();
 
             List<int> randIndexNumbers = new List<int>();
 

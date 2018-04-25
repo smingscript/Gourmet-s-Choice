@@ -9,17 +9,6 @@ namespace Gourmet_s_Choice.Data
 {
     class FoodData : EntityData<Food>
     {
-        public int GetFoodCount()
-        {
-            using (FoodEntities context = new FoodEntities())
-            {
-                int count =
-                    context.Foods.Count();
-
-                return count;
-            }
-        }
-
         public string GetById(int index)
         {
             using (FoodEntities context = new FoodEntities())

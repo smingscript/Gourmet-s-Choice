@@ -13,6 +13,7 @@ namespace FlashCard.Data
     {
         public const string ConnectionString = "name=FoodEntities";
     }
+
     public class EntityData<T> : EntityDataInitializer where T : class
     {
         private static DbContext Create()
@@ -21,12 +22,14 @@ namespace FlashCard.Data
             context.Database.Log = x => Debug.WriteLine(x);
             return context;
         }
-        public List<T> GetAll(Expression<Func<T, bool>> predicate = null, int startRowIndex = 0, int maximumRows = int.MaxValue)
+
+        public List<T> GetAll(Expression<Func<T, bool>> predicate = null, int startRowIndex = 0,
+            int maximumRows = int.MaxValue)
         {
             using (DbContext context = Create())
             {
                 IQueryable<T> query = from x in context.Set<T>()
-                                      select x;
+                    select x;
                 if (predicate != null)
                     query = query.Where(predicate);
                 query = GetOrderedQuery(query);
@@ -37,10 +40,12 @@ namespace FlashCard.Data
                 return query.ToList();
             }
         }
+
         protected virtual IQueryable<T> GetOrderedQuery(IQueryable<T> query)
         {
             throw new NotImplementedException("EntityData.GetOrderedQuery");
         }
+
         public List<T> Get<U>(
             Expression<Func<T, bool>> predicate = null,
             Expression<Func<T, U>> orderBy = null,
@@ -49,7 +54,7 @@ namespace FlashCard.Data
             using (DbContext context = Create())
             {
                 IQueryable<T> query = from x in context.Set<T>()
-                                      select x;
+                    select x;
                 if (predicate != null)
                     query = query.Where(predicate);
                 if (orderBy != null)
@@ -60,9 +65,11 @@ namespace FlashCard.Data
                     if (maximumRows != int.MaxValue)
                         query = query.Take(maximumRows);
                 }
+
                 return query.ToList();
             }
         }
+
         public List<S> Select<U, S>(
             Expression<Func<T, S>> selector,
             Expression<Func<T, bool>> predicate = null,
@@ -72,7 +79,7 @@ namespace FlashCard.Data
             using (DbContext context = Create())
             {
                 IQueryable<T> query = from x in context.Set<T>()
-                                      select x;
+                    select x;
                 if (predicate != null)
                     query = query.Where(predicate);
                 if (orderBy != null)
@@ -83,6 +90,7 @@ namespace FlashCard.Data
                     if (maximumRows != int.MaxValue)
                         query = query.Take(maximumRows);
                 }
+
                 return query.Select(selector).ToList();
             }
         }
@@ -95,6 +103,7 @@ namespace FlashCard.Data
                 context.SaveChanges();
             }
         }
+
         public void Update(T entity)
         {
             using (DbContext context = Create())
@@ -103,6 +112,7 @@ namespace FlashCard.Data
                 context.SaveChanges();
             }
         }
+
         public void Delete(T entity)
         {
             using (DbContext context = Create())
@@ -111,21 +121,24 @@ namespace FlashCard.Data
                 context.SaveChanges();
             }
         }
+
         public int GetCount()
         {
             return GetCount(null);
         }
+
         public int GetCount(Expression<Func<T, bool>> predicate)
         {
             using (DbContext context = Create())
             {
                 var query = from x in context.Set<T>()
-                            select x;
+                    select x;
                 if (predicate != null)
                     query = query.Where(predicate);
                 return query.Count();
             }
         }
+
         public T GetFirst(Func<T, bool> predicate)
         {
             using (DbContext context = Create())

@@ -97,44 +97,38 @@ namespace Gourmet_s_Choice
                 idPointer = 0;
             }
 
-            var foodCandidates = NextFoodCandidates();
-            List<int> candidate = foodCandidates[idPointer];
+            var foodCandidates = NextRoundCandidates();
+            //            List<int> candidate = foodCandidates[idPointer];
+            Battle candidate = foodCandidates[idPointer];
 
-            //ptbLeft.Image = DataRepository.FoodImage.GetById(UpdateNewRoundImage()[0]);
-            //ptbRight.Image = DataRepository.FoodImage.GetById(UpdateNewRoundImage()[1]);
+//            ptbLeft.Image = DataRepository.FoodImage.GetById(UpdateNewRoundImage()[0]);
+//            ptbRight.Image = DataRepository.FoodImage.GetById(UpdateNewRoundImage()[1]);
 
-            //txtbxLeft.Text = DataRepository.Food.GetById(player[0]);
-            //txtbxRight.Text = DataRepository.Food.GetById(player[1]);
-
-            txtbxLeft.Text = Convert.ToString(candidate[0]);
-            txtbxRight.Text = Convert.ToString(candidate[1]);
+            txtbxLeft.Text = DataRepository.Food.GetById(candidate.BattlePlayer[0]);
+            txtbxRight.Text = DataRepository.Food.GetById(candidate.BattlePlayer[1]);
 
             battleRound++;
-
-
 
         }
 
         //각 토너먼트가 끌날 때 마다 호출되어서 반환될 리스트를 만든다
-        public List<List<int>> NextFoodCandidates()
+        public List<Battle> NextRoundCandidates()
         {
-//            List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 , 20 };
-            
-//            foodCandidateList = randomIndex.ShuffleIndex(list);
+            //            foodCandidateList = randomIndex.ShuffleIndex(list);
+            //            List<List<int>> listOfList = new List<List<int>>();
 
-
-            List<List<int>> listOfList = new List<List<int>>();
+            List<Battle> Battles = new List<Battle>();
 
             for (int i = 0; i < foodCandidateList.Count; i += 2)
             {
                 List<int> listItem = new List<int>();
                 listItem.Add(foodCandidateList[i]);
                 listItem.Add(foodCandidateList[i + 1]);
-
-                listOfList.Add(listItem);
+                
+                Battles.Add(new Battle {BattlePlayer = listItem});
             }
 
-            return listOfList;
+            return Battles;
         }
 
         public void UpdateRoundImage(int round)

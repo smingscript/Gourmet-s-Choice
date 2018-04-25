@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gourmet_s_Choice
 {
-    class Battle
+    public class Battle
     {
         public List<int> BattlePlayer { get; set; }
         public int ClickedIndex{ get; set; }
