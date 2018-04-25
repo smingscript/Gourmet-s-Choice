@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Windows.Forms;
+using Gourmet_s_Choice.Forms;
 using Gourmet_s_Choice.Helper;
 
 namespace Gourmet_s_Choice
@@ -17,9 +18,14 @@ namespace Gourmet_s_Choice
 
     public partial class MainForm : Form
     {
+        private WinnerForm winnerForm;
+
         public MainForm()
         {
             InitializeComponent();
+
+            this.winnerForm = new WinnerForm();
+            HideForm(winnerForm);
         }
 
         #region Fields
@@ -34,7 +40,7 @@ namespace Gourmet_s_Choice
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: 몇 강을 할지 선택하는 창이 띄운다
-            gameRound = 16;
+            gameRound = 8;
             //몇 강을 할 지 사용자가 선택을 하면 반환값으로 화면을 구성한다.
             
             if(gameRound == 16)
@@ -83,28 +89,42 @@ namespace Gourmet_s_Choice
                 battles = Battle.GenerateRounds(winnerList);
             }
 
-            //버튼이 클릭이 될 때의 버튼에 따라 승자를 Battle의 Winner속성에 저장한다
-            battles[idPointer].Winner = battles[idPointer].Foods[clickOn];
-
-            if (idPointer == 0)
+            //gameRound가 1이 되면(우승이 결정) 새로운 창으로 넘어간다
+            if (gameRound == 1)
             {
-                //새 라운드의 대진표를 한번만 생성하게 한다
-                battles = Battle.GenerateRounds(foodCandidateList);
+                ShowForm(winnerForm);
+                HideForm(this);
             }
 
-            #region Update Form
-            //라운드의 인덱스를 턴마다 증가시키면서 대진 짝을 가져온다
-            Battle candidate = battles[idPointer];
 
-            //다음 라운드 음식 이름과 사진으로 업데이트한다
-            MemoryStream memoryStreamLeft = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[0]));
-            ptbLeft.Image  = Image.FromStream(memoryStreamLeft);
-            MemoryStream memoryStreamRight = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[1]));
-            ptbRight.Image = Image.FromStream(memoryStreamRight);
+            //배틀을 한번 이상 한 후에 버튼에 따라 승자를 Battle의 Winner속성에 저장한다
+            if (idPointer != 0)
+            {
+                battles[idPointer].Winner = battles[idPointer].Foods[clickOn];
 
-            txtbxLeft.Text = DataRepository.Food.GetById(candidate.Foods[0]);
-            txtbxRight.Text = DataRepository.Food.GetById(candidate.Foods[1]);
-            #endregion
+                #region Update Form
+                //라운드의 인덱스를 턴마다 증가시키면서 대진 짝을 가져온다
+                Battle candidate = battles[idPointer];
+
+                //다음 라운드 음식 이름과 사진으로 업데이트한다
+                MemoryStream memoryStreamLeft = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[0]));
+                ptbLeft.Image = Image.FromStream(memoryStreamLeft);
+                MemoryStream memoryStreamRight = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[1]));
+                ptbRight.Image = Image.FromStream(memoryStreamRight);
+
+                txtbxLeft.Text = DataRepository.Food.GetById(candidate.Foods[0]);
+                txtbxRight.Text = DataRepository.Food.GetById(candidate.Foods[1]);
+                #endregion
+            }
+            
+
+//            if (idPointer == 0)
+//            {
+//                //새 라운드의 대진표를 한번만 생성하게 한다
+//                battles = Battle.GenerateRounds(foodCandidateList);
+//            }
+
+            
         }
 
         public void UpdateRoundImage(int round)
@@ -128,7 +148,38 @@ namespace Gourmet_s_Choice
             pctbRound.Image = roundImage;
         }
 
-        
+        #region Transition Between Forms
+        private int height;
+        private int width;
+        private System.Windows.Forms.FormBorderStyle borderStyle;
+
+        private void ShowForm(Form form)
+        {
+            form.Visible = true;
+            form.FormBorderStyle = borderStyle;
+            form.Height = height;
+            form.Width = width;
+        }
+
+        private void HideForm(Form form)
+        {
+            height = form.Height;
+            width = form.Width;
+            borderStyle = form.FormBorderStyle;
+
+            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            form.Height = 0;
+            form.Width = 0;
+            form.Visible = false;
+        }
+        #endregion
+
+        // TODO: 결승 후에 승자만 나오는 폼 만들기
+        //https://stackoverflow.com/questions/33056778/transition-to-a-form-to-another
+        //https://www.codeproject.com/Questions/330789/Transition-between-Forms
+
+        // TODO: 마지막으로 인터넷 브라우저를 열기
+        //https://support.microsoft.com/ko-kr/help/305703/how-to-start-the-default-internet-browser-programmatically-by-using-vi
     }
     #endregion 
 }
