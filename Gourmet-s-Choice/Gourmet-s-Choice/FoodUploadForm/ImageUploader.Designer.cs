@@ -28,25 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.btnUpload = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.bgwWorker = new System.ComponentModel.BackgroundWorker();
             this.btnOpen = new System.Windows.Forms.Button();
             this.fbdFolder = new System.Windows.Forms.FolderBrowserDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFoodName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // progressBar
-            // 
-            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(12, 110);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(400, 23);
-            this.progressBar.TabIndex = 0;
             // 
             // btnUpload
             // 
@@ -69,12 +59,6 @@
             this.txtPath.Size = new System.Drawing.Size(327, 21);
             this.txtPath.TabIndex = 2;
             // 
-            // bgwWorker
-            // 
-            this.bgwWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwWorker_DoWork);
-            this.bgwWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgwWorker_ProgressChanged);
-            this.bgwWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwWorker_RunWorkerCompleted);
-            // 
             // btnOpen
             // 
             this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -86,12 +70,12 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // textBox1
+            // txtFoodName
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(327, 21);
-            this.textBox1.TabIndex = 4;
+            this.txtFoodName.Location = new System.Drawing.Point(85, 39);
+            this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.Size = new System.Drawing.Size(327, 21);
+            this.txtFoodName.TabIndex = 4;
             // 
             // lblName
             // 
@@ -115,14 +99,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 147);
+            this.ClientSize = new System.Drawing.Size(424, 110);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFoodName);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnUpload);
-            this.Controls.Add(this.progressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ImageUploader";
             this.Text = "ImageUploader";
@@ -132,14 +115,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.TextBox txtPath;
         private System.ComponentModel.BackgroundWorker bgwWorker;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.FolderBrowserDialog fbdFolder;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label1;
     }

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gourmet_s_Choice.Helper;
+using ImageConverter = System.Drawing.ImageConverter;
 
 namespace Gourmet_s_Choice.FoodUploadForm
 {
@@ -30,50 +32,47 @@ namespace Gourmet_s_Choice.FoodUploadForm
                 Directory
                     .EnumerateFiles(fbdFolder.SelectedPath)
                     .Where(x => x.EndsWith(".png") || x.EndsWith(".jpg"))
-                    .ToList();//folder dialog 파일의 전체 경로를 stirng으로 반환
+                    .ToList(); //folder dialog 파일의 전체 경로를 stirng으로 반환
 
             //Form property
-            //Cursor = Cursors.WaitCursor;
+            Cursor = Cursors.WaitCursor;
 
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            bgwWorker.RunWorkerAsync(files);
-        }
+            //            bgwWorker.RunWorkerAsync(files);
 
-        private void bgwWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            List<string> files = (List<string>)e.Argument;
+//            List<string> files = (List<string>)e.Argument;
 
             float insertedCount = 0;
             foreach (var file in files)
             {
-                //file read in binary
-                //byte[] imageBytes = File.ReadAllBytes(file); //경로를 받아서 이진 파일(image, mp3등등 텍스트가 아닌 경우)로 읽는다 vs text 파일
-                Image image = Image.FromFile(file);
+                string fileName = Path.GetFileName(file);
+
+                string strBlock = ".jpg";
+                fileName = strBlock.Replace(fileName, "");
+
+                //file read in Bitmap
+                Bitmap image = new Bitmap(file);
+
+                string thumbPath = $"C:\\Users\\KCCI\\Desktop\\foodImage\\thumbnail\\thumbnail_{fileName}.jpg";
+                Bitmap thumnailImage = image.Resize(400, 300, 1080, thumbPath);
+
+                //file convert into binary
+                Byte[] imageBytes = File.ReadAllBytes(file);
+                Byte[] thumbnailBytes = File.ReadAllBytes(thumbPath);
 
                 //DB접근
-                //DataRepository.Card.InsertWithImage(cbbCategory.Text,
-                //    imageBytes); //Card table과 CardImage table에 동시에 넣어야 한다
+                DataRepository.FoodImage.InsertWithImage(txtFoodName.Text,
+                    imageBytes, thumbnailBytes);
 
 
                 //progress bar update UI접근
                 insertedCount += 1;
                 //prbProgress.Value = (int)(insertedCount / files.Count * 100);
-                bgwWorker.ReportProgress((int)(insertedCount / files.Count * 100));
+                //                bgwWorker.ReportProgress((int)(insertedCount / files.Count * 100));
             }
-        }
-
-        private void bgwWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            //Image
-
-        }
-
-        private void bgwWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-
         }
     }
 }
