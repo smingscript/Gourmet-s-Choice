@@ -6,9 +6,9 @@ namespace Gourmet_s_Choice.Helper
 {
     class RandomIndex
     {
-        Random rand = new Random();
+        static Random rand = new Random();
 
-        public List<int> GenerateRandIndex(int candidateNumber)
+        public static List<int> GenerateRandIndex(int candidateNumber)
         {
             //DB의 음식 개수를 구한다
             int foodCount = DataRepository.Food.GetCount();
@@ -26,7 +26,7 @@ namespace Gourmet_s_Choice.Helper
             return randIndexNumbers;
         }
 
-        public List<int> ShuffleIndex(List<int> list)
+        public static List<int> ShuffleIndex(List<int> list)
         {
             var shuffleList = list.OrderBy(item => rand.Next());
 

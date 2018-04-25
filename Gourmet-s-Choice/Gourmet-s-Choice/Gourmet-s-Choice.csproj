@@ -144,16 +144,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FoodDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FoodDB.edmx</DependentUpon>
-      <LastGenOutput>FoodDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="FoodDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FoodDB.edmx</DependentUpon>
-      <LastGenOutput>FoodDB.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\fork.png" />
     <None Include="Resources\startGame.png" />
     <None Include="Resources\press-button.png" />
@@ -169,6 +159,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FoodDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FoodDB.edmx</DependentUpon>
+      <LastGenOutput>FoodDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FoodDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FoodDB.edmx</DependentUpon>
+      <LastGenOutput>FoodDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

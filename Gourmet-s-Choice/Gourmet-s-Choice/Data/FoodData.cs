@@ -22,7 +22,7 @@ namespace Gourmet_s_Choice.Data
                 return food.FoodName;
             }
         }
-
+/*
         public List<FoodWithImage> GetFoodImages()
         {
             using (FoodEntities context = new FoodEntities())
@@ -48,6 +48,7 @@ namespace Gourmet_s_Choice.Data
             }
 
         }
+*/
     }
 
     public class FoodWithImage

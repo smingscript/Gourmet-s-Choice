@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Gourmet_s_Choice.Helper;
 
 namespace Gourmet_s_Choice
 {
@@ -12,24 +13,12 @@ namespace Gourmet_s_Choice
 
         public int Winner { get; set; }
 
-        public static Battle Generate()
-        {
-            Battle battle = new Battle();
-            battle.foo();
-            battle.foo();
-            battle.foo();
-            battle.foo();
-            return battle;
-        }
-
         //각 토너먼트가 끌날 때 마다 호출되어서 반환될 리스트를 만든다
-        public List<Battle> NextRoundCandidates(List<int> list)
+
+        public static List<Battle> GenerateRounds(List<int> list)
         {
             //넘어온 다음 후보 리스트를 섞어준다
-            foodCandidateList = randomIndex.ShuffleIndex(list);
-
-
-//            List<List<int>> listOfList = new List<List<int>>();
+            var foodCandidateList = RandomIndex.ShuffleIndex(list);
 
             List<Battle> Battles = new List<Battle>();
 
@@ -38,39 +27,40 @@ namespace Gourmet_s_Choice
                 List<int> listItem = new List<int>();
                 listItem.Add(foodCandidateList[i]);
                 listItem.Add(foodCandidateList[i + 1]);
-                
-                Battles.Add(new Battle {Foods = listItem});
+
+                Battles.Add(new Battle { Foods = listItem });
             }
 
             return Battles;
         }
 
-
-        void foo()
-        {
-            Marine m1, m2;
-
-            
-        }
-    }
+        /*
+                void foo()
+                {
+                    Marine m1, m2;
 
 
-    class Marine
-    {
-        public int HP;
+                }
+            }
 
-        public static int InitialHP;
 
-        public void IncreseHP()
-        {
-            HP++;
-            InitialHP++;
-        }
+            class Marine
+            {
+                public int HP;
 
-        public static void IncreseInitialHP()
-        {
-            InitialHP++;
-            HP++;
-        }
+                public static int InitialHP;
+
+                public void IncreseHP()
+                {
+                    HP++;
+                    InitialHP++;
+                }
+
+                public static void IncreseInitialHP()
+                {
+                    InitialHP++;
+                    HP++;
+                }
+*/
     }
 }
