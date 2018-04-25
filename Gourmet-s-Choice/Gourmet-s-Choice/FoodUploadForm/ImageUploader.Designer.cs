@@ -74,6 +74,7 @@
             // 
             this.txtFoodName.Location = new System.Drawing.Point(85, 39);
             this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.ReadOnly = true;
             this.txtFoodName.Size = new System.Drawing.Size(327, 21);
             this.txtFoodName.TabIndex = 4;
             // 

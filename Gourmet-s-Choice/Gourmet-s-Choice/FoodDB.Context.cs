@@ -25,7 +25,7 @@ namespace Gourmet_s_Choice
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<FoodImage> FoodImages { get; set; }
+        public virtual DbSet<Food> Foods { get; set; }
     }
 }

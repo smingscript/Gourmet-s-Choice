@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -9,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gourmet_s_Choice.Helper;
-using ImageConverter = System.Drawing.ImageConverter;
 
 namespace Gourmet_s_Choice.FoodUploadForm
 {
@@ -33,25 +31,17 @@ namespace Gourmet_s_Choice.FoodUploadForm
                     .EnumerateFiles(fbdFolder.SelectedPath)
                     .Where(x => x.EndsWith(".png") || x.EndsWith(".jpg"))
                     .ToList(); //folder dialog 파일의 전체 경로를 stirng으로 반환
-
-            //Form property
-            Cursor = Cursors.WaitCursor;
-
+        
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
-        {
-            //            bgwWorker.RunWorkerAsync(files);
-
-//            List<string> files = (List<string>)e.Argument;
-
-            float insertedCount = 0;
+        { 
             foreach (var file in files)
             {
                 string fileName = Path.GetFileName(file);
-
                 string strBlock = ".jpg";
-                fileName = strBlock.Replace(fileName, "");
+                fileName = fileName.Replace(strBlock, "");
+                txtFoodName.Text = fileName;
 
                 //file read in Bitmap
                 Bitmap image = new Bitmap(file);
@@ -67,11 +57,6 @@ namespace Gourmet_s_Choice.FoodUploadForm
                 DataRepository.FoodImage.InsertWithImage(txtFoodName.Text,
                     imageBytes, thumbnailBytes);
 
-
-                //progress bar update UI접근
-                insertedCount += 1;
-                //prbProgress.Value = (int)(insertedCount / files.Count * 100);
-                //                bgwWorker.ReportProgress((int)(insertedCount / files.Count * 100));
             }
         }
     }

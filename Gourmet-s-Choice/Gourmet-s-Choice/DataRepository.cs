@@ -8,7 +8,7 @@ using Gourmet_s_Choice.Data;
 
 namespace Gourmet_s_Choice
 {
-    class DataRepository
+    public class DataRepository
     {
         public static FoodData Food { get; } = new FoodData();
         public static FoodImageData FoodImage { get; } = new FoodImageData();

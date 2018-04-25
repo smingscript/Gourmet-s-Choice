@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="71d71cd6ecbc4628b4522433ff08c16e" Name="Diagram1">
-        <EntityTypeShape EntityType="FoodModel.Food" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="FoodModel.FoodImage" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="FoodModel.FK_FoodImage_Food" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FoodModel.FoodImage" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FoodModel.Food" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="FoodModel.FK_FoodImage_Food" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
