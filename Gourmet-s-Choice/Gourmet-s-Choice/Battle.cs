@@ -18,20 +18,27 @@ namespace Gourmet_s_Choice
         public static List<Battle> GenerateRounds(List<int> list)
         {
             //넘어온 다음 후보 리스트를 섞어준다
-            var foodCandidateList = RandomIndex.ShuffleIndex(list);
+            var foodList = RandomIndex.ShuffleIndex(list);
 
             List<Battle> Battles = new List<Battle>();
 
-            for (int i = 0; i < foodCandidateList.Count; i += 2)
+            for (int i = 0; i < foodList.Count; i += 2)
             {
                 List<int> listItem = new List<int>();
-                listItem.Add(foodCandidateList[i]);
-                listItem.Add(foodCandidateList[i + 1]);
+                listItem.Add(foodList[i]);
+                listItem.Add(foodList[i + 1]);
 
                 Battles.Add(new Battle { Foods = listItem });
             }
 
             return Battles;
+        }
+
+        public static int getWinnerIndex(List<Battle> battles)
+        {
+            int winnerIndex = battles[0].Winner;
+
+            return winnerIndex;
         }
 
         /*
@@ -62,5 +69,6 @@ namespace Gourmet_s_Choice
                     HP++;
                 }
 */
+
     }
 }

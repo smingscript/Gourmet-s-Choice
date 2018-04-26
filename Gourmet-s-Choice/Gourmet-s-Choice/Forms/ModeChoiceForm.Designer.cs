@@ -87,7 +87,6 @@
             this.Controls.Add(this.textBox1);
             this.Name = "ModeChoiceForm";
             this.Text = "ModeChoiceForm";
-            this.Load += new System.EventHandler(this.ModeChoiceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

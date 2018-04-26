@@ -30,18 +30,23 @@ namespace Gourmet_s_Choice.Data
             Thread.Sleep(500);
         }
 
-        public byte[] GetById(int index)
+        public byte[] GetById(int index, string imageType)
         {
+            FoodImage foodImage;
             using (FoodEntities context = new FoodEntities())
             {
-                FoodImage foodImage =
+                foodImage =
                 context.FoodImages.FirstOrDefault(x => x.FoodID == index);
 
                 if (foodImage == null)
                     return null;
-
-                return foodImage.Thumbnail;
+                
             }
+
+            if (imageType == "Image")
+                return foodImage.Image;
+
+            return foodImage.Thumbnail;
         }
     }
 }

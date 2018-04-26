@@ -12,7 +12,7 @@ namespace Gourmet_s_Choice.Helper
     {
         public int Height { get; set; }
         public int Width { get; set; }
-        public Size Size { get; set; }
+        public Point Location { get; set; }
         private System.Windows.Forms.FormBorderStyle borderStyle;
 
         public void ShowForm(Form form)
@@ -21,14 +21,14 @@ namespace Gourmet_s_Choice.Helper
             form.FormBorderStyle = borderStyle;
             form.Height = Height;
             form.Width = Width;
-            form.Size = Size;
+            form.Location = Location;
         }
 
         public void HideForm(Form form)
         {
             Height = form.Height;
             Width = form.Width;
-            Size = form.Size;
+            Location = form.Location;
             borderStyle = form.FormBorderStyle;
 
             form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

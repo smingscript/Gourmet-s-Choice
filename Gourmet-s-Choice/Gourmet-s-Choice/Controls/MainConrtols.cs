@@ -114,8 +114,8 @@ namespace Gourmet_s_Choice.Controls
 //                MemoryStream memoryStreamRight = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[1]));
 //                ptbRight.Image = Image.FromStream(memoryStreamRight);
 //
-//                txtbxLeft.Text = DataRepository.Food.GetById(candidate.Foods[0]);
-//                txtbxRight.Text = DataRepository.Food.GetById(candidate.Foods[1]);
+//                txtbxLeft.Text = DataRepository.Food.GetFoodById(candidate.Foods[0]);
+//                txtbxRight.Text = DataRepository.Food.GetFoodById(candidate.Foods[1]);
 //                #endregion
 //            }
 

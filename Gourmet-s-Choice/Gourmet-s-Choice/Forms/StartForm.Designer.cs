@@ -34,9 +34,9 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.HotPink;
+            this.pictureBox3.BackColor = System.Drawing.Color.Thistle;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Image = global::Gourmet_s_Choice.Properties.Resources.fork;
+            this.pictureBox3.Image = global::Gourmet_s_Choice.Properties.Resources.click;
             this.pictureBox3.Location = new System.Drawing.Point(535, 187);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox3.Name = "pictureBox3";

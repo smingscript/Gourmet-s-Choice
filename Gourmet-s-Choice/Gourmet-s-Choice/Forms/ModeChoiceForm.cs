@@ -18,11 +18,6 @@ namespace Gourmet_s_Choice.Forms
             InitializeComponent();
         }
 
-        private void ModeChoiceForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         MainForm mainform = new MainForm();
 
         private void pictureBox1_Click(object sender, EventArgs e)

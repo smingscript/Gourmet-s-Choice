@@ -63,6 +63,16 @@ namespace Gourmet_s_Choice.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap click {
+            get {
+                object obj = ResourceManager.GetObject("click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EatWhat {
             get {
                 object obj = ResourceManager.GetObject("EatWhat", resourceCulture);

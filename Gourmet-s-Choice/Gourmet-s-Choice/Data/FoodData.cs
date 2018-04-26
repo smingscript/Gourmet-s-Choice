@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using FlashCard.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FlashCard.Data;
 
 namespace Gourmet_s_Choice.Data
 {
     public class FoodData : EntityData<Food>
     {
-        public string GetById(int index)
+        public string GetFoodById(int index)
         {
             using (FoodEntities context = new FoodEntities())
             {

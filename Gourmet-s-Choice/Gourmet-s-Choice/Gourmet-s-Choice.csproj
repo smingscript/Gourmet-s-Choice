@@ -140,6 +140,9 @@
     <EmbeddedResource Include="Forms\RootForm.resx">
       <DependentUpon>RootForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WinnerForm.resx">
+      <DependentUpon>WinnerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +208,7 @@
       <DependentUpon>FoodDB.edmx</DependentUpon>
       <LastGenOutput>FoodDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\click.png" />
     <None Include="Resources\startImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

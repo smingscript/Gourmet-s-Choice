@@ -18,7 +18,6 @@ namespace Gourmet_s_Choice.Forms
         public RootForm()
         {
             InitializeComponent();
-            
         }
 
         private void RootForm_Load(object sender, EventArgs e)
