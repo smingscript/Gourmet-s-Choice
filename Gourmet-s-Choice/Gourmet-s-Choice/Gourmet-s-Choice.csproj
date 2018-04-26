@@ -87,6 +87,12 @@
     <Compile Include="FoodUploadForm\ImageUploader.Designer.cs">
       <DependentUpon>ImageUploader.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ModeChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModeChoiceForm.Designer.cs">
+      <DependentUpon>ModeChoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WinnerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,8 +118,8 @@
     <EmbeddedResource Include="FoodUploadForm\ImageUploader.resx">
       <DependentUpon>ImageUploader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WinnerForm.resx">
-      <DependentUpon>WinnerForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ModeChoiceForm.resx">
+      <DependentUpon>ModeChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
