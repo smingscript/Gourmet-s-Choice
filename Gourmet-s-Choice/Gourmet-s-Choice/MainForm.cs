@@ -40,12 +40,6 @@ namespace Gourmet_s_Choice
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: 몇 강을 할지 선택하는 창이 띄운다
-            ModeChoiceForm modeChoice = new ModeChoiceForm();
-            modeChoice.Show();
-
-
-
-
             gameRound = 8;
             //몇 강을 할 지 사용자가 선택을 하면 반환값으로 화면을 구성한다.
             
