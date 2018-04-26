@@ -73,14 +73,14 @@
             // pctbRound
             // 
             this.pctbRound.Location = new System.Drawing.Point(333, 5);
-            this.pctbRound.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pctbRound.Margin = new System.Windows.Forms.Padding(1);
             this.pctbRound.Name = "pctbRound";
             this.pctbRound.Size = new System.Drawing.Size(83, 81);
             this.pctbRound.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctbRound.TabIndex = 6;
             this.pctbRound.TabStop = false;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,7 +90,7 @@
             this.Controls.Add(this.txtbxLeft);
             this.Controls.Add(this.ptbRight);
             this.Controls.Add(this.ptbLeft);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbLeft)).EndInit();

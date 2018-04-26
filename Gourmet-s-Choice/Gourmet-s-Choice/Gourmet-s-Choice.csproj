@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battle.cs" />
+    <Compile Include="Controls\MainConrtols.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MainConrtols.Designer.cs">
+      <DependentUpon>MainConrtols.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataRepository.cs" />
     <Compile Include="Data\EntityData.cs" />
     <Compile Include="Data\FoodData.cs" />
@@ -93,12 +99,19 @@
     <Compile Include="Forms\ModeChoiceForm.Designer.cs">
       <DependentUpon>ModeChoiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RootForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RootForm.Designer.cs">
+      <DependentUpon>RootForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WinnerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\WinnerForm.Designer.cs">
       <DependentUpon>WinnerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\FormOnOff.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,11 +128,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helper\RandomIndex.cs" />
+    <EmbeddedResource Include="Controls\MainConrtols.resx">
+      <DependentUpon>MainConrtols.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FoodUploadForm\ImageUploader.resx">
       <DependentUpon>ImageUploader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModeChoiceForm.resx">
       <DependentUpon>ModeChoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RootForm.resx">
+      <DependentUpon>RootForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

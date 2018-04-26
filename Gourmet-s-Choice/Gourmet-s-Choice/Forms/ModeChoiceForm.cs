@@ -7,30 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gourmet_s_Choice.Helper;
 
 namespace Gourmet_s_Choice.Forms
 {
-    public partial class ModeChoiceForm : Form
+    public partial class ModeChoiceForm : RootForm
     {
         public ModeChoiceForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ModeChoiceForm_Load(object sender, EventArgs e)
         {
 
-
-            this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        MainForm mainform = new MainForm();
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
+            mainform.GameRound = 8;
+            this.Owner = mainform;
+            formOnOff.HideForm(this);
+            formOnOff.ShowForm(mainform);
+        }
 
-
-
-
-            this.Close();
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            mainform.GameRound = 16;
+            this.Owner = mainform;
+            formOnOff.HideForm(this);
+            formOnOff.ShowForm(mainform);
         }
     }
 }
