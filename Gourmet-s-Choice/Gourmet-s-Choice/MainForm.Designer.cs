@@ -42,7 +42,7 @@
             // 
             this.ptbLeft.Location = new System.Drawing.Point(12, 90);
             this.ptbLeft.Name = "ptbLeft";
-            this.ptbLeft.Size = new System.Drawing.Size(364, 387);
+            this.ptbLeft.Size = new System.Drawing.Size(364, 323);
             this.ptbLeft.TabIndex = 0;
             this.ptbLeft.TabStop = false;
             this.ptbLeft.Click += new System.EventHandler(this.ptbLeft_Click);
@@ -51,7 +51,7 @@
             // 
             this.ptbRight.Location = new System.Drawing.Point(382, 90);
             this.ptbRight.Name = "ptbRight";
-            this.ptbRight.Size = new System.Drawing.Size(379, 387);
+            this.ptbRight.Size = new System.Drawing.Size(354, 323);
             this.ptbRight.TabIndex = 1;
             this.ptbRight.TabStop = false;
             this.ptbRight.Click += new System.EventHandler(this.ptbRight_Click);
@@ -73,14 +73,14 @@
             // pctbRound
             // 
             this.pctbRound.Location = new System.Drawing.Point(333, 5);
-            this.pctbRound.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pctbRound.Margin = new System.Windows.Forms.Padding(1);
             this.pctbRound.Name = "pctbRound";
             this.pctbRound.Size = new System.Drawing.Size(83, 81);
             this.pctbRound.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctbRound.TabIndex = 6;
             this.pctbRound.TabStop = false;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,7 +90,7 @@
             this.Controls.Add(this.txtbxLeft);
             this.Controls.Add(this.ptbRight);
             this.Controls.Add(this.ptbLeft);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbLeft)).EndInit();
