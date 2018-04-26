@@ -1,6 +1,6 @@
-﻿namespace Gourmet_s_Choice
+﻿namespace Gourmet_s_Choice.Forms
 {
-    partial class Form1
+    partial class RootForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // RootForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "RootForm";
+            this.Text = "RootForm";
+            this.Load += new System.EventHandler(this.RootForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -45,4 +45,3 @@
         #endregion
     }
 }
-

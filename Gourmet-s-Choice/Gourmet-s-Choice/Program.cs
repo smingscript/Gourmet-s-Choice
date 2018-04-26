@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gourmet_s_Choice.FoodUploadForm;
+using Gourmet_s_Choice.Forms;
 
 namespace Gourmet_s_Choice
 {
@@ -16,8 +18,12 @@ namespace Gourmet_s_Choice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            
+            //            Application.Run(new MainForm());
+            //            Application.Run(new ImageUploader());
+            //            Application.Run(new WinnerForm());
+            Application.Run(new StartForm());
+
+
         }
     }
 }

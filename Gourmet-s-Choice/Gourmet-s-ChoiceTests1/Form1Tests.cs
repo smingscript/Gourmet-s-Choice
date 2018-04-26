@@ -4,17 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gourmet_s_Choice
+namespace Gourmet_s_ChoiceTests1
 {
-    class RandomIndex
+    class Form1Tests
     {
-
-        Random random = new Random();
-
-        //DB의 음식 개수를 구한다
-
-
-
-
     }
 }

@@ -7,19 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gourmet_s_Choice.Helper;
 
-namespace Gourmet_s_Choice
+namespace Gourmet_s_Choice.Forms
 {
-    public partial class Form1 : Form
+    public partial class RootForm : Form
     {
-        public Form1()
+        internal static FormOnOff formOnOff;
+
+        public RootForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void RootForm_Load(object sender, EventArgs e)
         {
-            
+            formOnOff = new FormOnOff();
         }
     }
 }
