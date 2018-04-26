@@ -34,7 +34,7 @@ namespace Gourmet_s_Choice
         private int gameRound;
         public int GameRound { get; set; }
         private Image roundImage;
-        private int idPointer = -1;
+        private int idPointer = 0;
         #endregion
 
         #region Events
@@ -57,6 +57,7 @@ namespace Gourmet_s_Choice
             //랜덤으로 음식을 가져올 리스트를 생성해둔다
             foodCandidateList = RandomIndex.GenerateRandIndex(gameRound);
             battles = Battle.GenerateRounds(foodCandidateList);
+            UpdateBattleImage(idPointer);
 
         }
 
@@ -79,6 +80,13 @@ namespace Gourmet_s_Choice
         //한 토너먼트가 끝나면 idPointer를 0으로 리셋시키고, 새로운 토너먼트 id리스트를 받아와야 한다.
         public void UpdateNewRoundForm(int clickOn)
         {
+            //gameRound가 1이 되면(우승이 결정) 새로운 창으로 넘어간다
+            if (gameRound == 1)
+            {
+                formOnOff.ShowForm(winnerForm);
+                formOnOff.HideForm(this);
+            }
+
             //포인터가 리스트의 값을 넘어서서 한 라운드가 끝나면 다음 라운드로 값을 변경시킨다.
             if (idPointer > battles.Count - 1) //foodCandidateList.Count
             {
@@ -93,42 +101,31 @@ namespace Gourmet_s_Choice
                 battles = Battle.GenerateRounds(winnerList);
             }
 
-            //gameRound가 1이 되면(우승이 결정) 새로운 창으로 넘어간다
-            if (gameRound == 1)
-            {
-                formOnOff.ShowForm(winnerForm);
-                formOnOff.HideForm(this);
-            }
+            
 
 
             //배틀을 한번 이상 한 후에 버튼에 따라 승자를 Battle의 Winner속성에 저장한다
             if (idPointer != 0)
             {
                 battles[idPointer].Winner = battles[idPointer].Foods[clickOn];
-
-                #region Update Form
-                //라운드의 인덱스를 턴마다 증가시키면서 대진 짝을 가져온다
-                Battle candidate = battles[idPointer];
-
-                //다음 라운드 음식 이름과 사진으로 업데이트한다
-                MemoryStream memoryStreamLeft = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[0]));
-                ptbLeft.Image = Image.FromStream(memoryStreamLeft);
-                MemoryStream memoryStreamRight = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[1]));
-                ptbRight.Image = Image.FromStream(memoryStreamRight);
-
-                txtbxLeft.Text = DataRepository.Food.GetById(candidate.Foods[0]);
-                txtbxRight.Text = DataRepository.Food.GetById(candidate.Foods[1]);
-                #endregion
+                UpdateBattleImage(idPointer);
             }
             
+        }
 
-//            if (idPointer == 0)
-//            {
-//                //새 라운드의 대진표를 한번만 생성하게 한다
-//                battles = Battle.GenerateRounds(foodCandidateList);
-//            }
+        public void UpdateBattleImage(int idPointer)
+        {
+            //라운드의 인덱스를 턴마다 증가시키면서 대진 짝을 가져온다
+            Battle candidate = battles[idPointer];
 
-            
+            //다음 라운드 음식 이름과 사진으로 업데이트한다
+            MemoryStream memoryStreamLeft = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[0]));
+            ptbLeft.Image = Image.FromStream(memoryStreamLeft);
+            MemoryStream memoryStreamRight = new MemoryStream(DataRepository.FoodImage.GetById(candidate.Foods[1]));
+            ptbRight.Image = Image.FromStream(memoryStreamRight);
+
+//            txtbxLeft.Text = DataRepository.Food.GetById(candidate.Foods[0]);
+//            txtbxRight.Text = DataRepository.Food.GetById(candidate.Foods[1]);
         }
 
         public void UpdateRoundImage(int round)
